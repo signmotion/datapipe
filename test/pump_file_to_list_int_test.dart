@@ -8,8 +8,7 @@ import 'helpers/utils.dart';
 void main() {
   test('binary file to List<int>', () {
     final file = File('./test/data/eye.webp');
-    final bytes = <int>[];
-    final r = (D(file) | D(bytes)).cast<List<int>>();
+    final r = (D(file) | const D(<int>[])).cast<List<int>>();
     expect(r.data.length, 183358);
 
     r.saveToFileAsString('$testOutputPath/binary_file_to_list_int.txt');

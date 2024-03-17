@@ -22,6 +22,7 @@ class Data<A, O extends DataOptions> {
       Data(data as B, options: optionsForCasted);
 }
 
+/// A base class for options.
 class DataOptions {
   const DataOptions();
 }
