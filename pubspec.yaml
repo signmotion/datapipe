@@ -1,0 +1,29 @@
+name: data_pipe
+description: >-
+  A standartized and well-tested set of IDs generators: globally unique, readable,
+  time-dependency, transitive, incremental, decremental IDs.
+repository: https://github.com/signmotion/data_pipe
+topics:
+  - generator
+  - id
+  - uuid
+  - time
+  - random
+
+# Format:
+#   version: major.minor.patch
+# You can calculate the number version code by this formula:
+#   code = m[A]jor * 100 * 100 + m[I]nor * 100 + [P]atch
+# Otherwise: +AAIIPP
+version: 0.7.0
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  meta: ">=1.10.0 <2.0.0"
+  test: ^1.25.2
+  uuid: ^4.3.3
+
+dev_dependencies:
+  lints: ^3.0.0
