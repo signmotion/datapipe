@@ -9,7 +9,13 @@ extension SaveDataStringExt on Data<String, DataOptions> {
 }
 
 extension SaveAsStringDataDynamicExt on Data<dynamic, DataOptions> {
-  void saveAsString(String path) => _preparePath(path).writeAsString('$data');
+  void saveAsString(String path) {
+    final file = _preparePath(path);
+    // ignore: avoid_dynamic_calls
+    final d = data is OwnType<dynamic> ? data.data : data;
+
+    file.writeAsString('$d');
+  }
 }
 
 File _preparePath(String path) => File(path)..createSync(recursive: true);
