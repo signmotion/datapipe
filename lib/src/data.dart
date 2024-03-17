@@ -1,8 +1,10 @@
 part of '../data_pipe.dart';
 
+/// Alias for [Data].
 typedef D<A, O extends DataOptions> = Data<A, O>;
 
 /// A wrapper for data.
+/// See [D].
 class Data<A, O extends DataOptions> {
   const Data(this.data, {O? options})
       : _options = options ?? const DataOptions();

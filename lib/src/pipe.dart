@@ -9,6 +9,8 @@ class Pipe<A extends Data<dynamic, OA>, B extends Data<dynamic, OB>,
   final B b;
 
   B run() => switch ((a, b)) {
+        (Data<File, DataOptions> ca, Data<DartConstListInt, DataOptions> cb) =>
+          pumpFileToDartConstListInt(ca, cb) as B,
         (Data<File, DataOptions> ca, Data<List<int>, DataOptions> cb) =>
           pumpFileToListInt(ca, cb) as B,
         _ => throw UnimplementedError(' The pipe from `$a.runtimeType`'

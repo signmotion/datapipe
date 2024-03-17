@@ -9,8 +9,7 @@ extension SaveDataStringExt on Data<String, DataOptions> {
 }
 
 extension SaveAsStringDataDynamicExt on Data<dynamic, DataOptions> {
-  void saveToFileAsString(String path) =>
-      _preparePath(path).writeAsString('$data');
+  void saveAsString(String path) => _preparePath(path).writeAsString('$data');
 }
 
 File _preparePath(String path) => File(path)..createSync(recursive: true);
