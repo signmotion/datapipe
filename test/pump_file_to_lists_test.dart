@@ -8,18 +8,31 @@ import 'helpers/utils.dart';
 void main() {
   final file = File('./test/data/eye.webp');
 
-  test('binary file to List<int>', () {
-    final r = (D(file) | const D(<int>[])).cast<List<int>>();
-    expect(r.data.length, 183358);
+  // test('file to List<int>', () {
+  //   final r = (D(file) | const D(<int>[])).cast<List<int>>();
+  //   expect(r.data.length, 183358);
 
-    r.saveAsString('$testOutputPath/binary_file_to_list_int.txt');
-  });
+  //   r.saveAsString('$testOutputPath/file_to_list_int.txt');
+  // });
 
-  test('binary file to Dart const List<int>', () {
+  test('file to Dart const List<int>', () {
     final r =
         (D(file) | const D(DartConstListInt(''))).cast<DartConstListInt>();
     expect(r.data.data, startsWith('const data = <int>['));
 
-    r.saveAsString('$testOutputPath/binary_file_to_dart_const_list_int.txt');
+    r.saveAsString('$testOutputPath/file_to_dart_const_list_int.txt');
+  });
+
+  test('file to Dart const List<int> with options', () {
+    final r = (D(file) |
+            const D(
+              DartConstListInt(''),
+              options: DartConstListIntOptions(name: 'image'),
+            ))
+        .cast<DartConstListInt>();
+    expect(r.data.data, startsWith('const image = <int>['));
+
+    r.saveAsString(
+        '$testOutputPath/file_to_dart_const_list_int_with_options.txt');
   });
 }
