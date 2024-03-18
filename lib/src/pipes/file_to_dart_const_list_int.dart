@@ -17,7 +17,7 @@ Data<DartConstListInt, DataOptions> pumpFileToDartConstListInt(
 }
 
 class DartConstListInt extends OwnTypeString {
-  const DartConstListInt(super.data);
+  const DartConstListInt([super.data = '']);
 }
 
 class DartConstListIntOptions extends DataOptions {
