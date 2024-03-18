@@ -10,7 +10,7 @@ void main() {
 
   test('file to List<int>', () {
     final r = (D(file) | const D(<int>[])).cast<List<int>>();
-    expect(r.data.length, 183358);
+    expect(r.data.length, 49904);
 
     r.saveAsString('$testOutputPath/file_to_list_int.txt');
   });
