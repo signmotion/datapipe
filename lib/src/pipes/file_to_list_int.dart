@@ -1,8 +1,9 @@
 part of '../../data_pipe.dart';
 
-/// Pumping [File] to [List<int>].
-Data<List<int>, DataOptions> pumpFileToListInt(
-  Data<File, DataOptions> a,
-  Data<List<int>, DataOptions> b,
-) =>
-    Data(a.data.readAsBytesSync().toList(), options: b.options);
+class FileToListIntPipe extends Pipe<File, List<int>, DataOptions> {
+  const FileToListIntPipe(super.a, super.b)
+      : super(options: const DataOptions());
+
+  @override
+  List<int> run() => a.readAsBytesSync().toList();
+}

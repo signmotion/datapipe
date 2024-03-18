@@ -1,18 +1,18 @@
 part of '../../data_pipe.dart';
 
-extension SaveDataListIntExt on Data<List<int>, DataOptions> {
-  void saveToFile(String path) => _preparePath(path).writeAsBytesSync(data);
+extension SaveDataListIntExt on List<int> {
+  void saveToFile(String path) => _preparePath(path).writeAsBytesSync(this);
 }
 
-extension SaveDataStringExt on Data<String, DataOptions> {
-  void saveToFile(String path) => _preparePath(path).writeAsStringSync(data);
+extension SaveDataStringExt on String {
+  void saveToFile(String path) => _preparePath(path).writeAsStringSync(this);
 }
 
-extension SaveAsStringDataDynamicExt on Data<dynamic, DataOptions> {
+extension SaveAsStringDataDynamicExt on dynamic {
   void saveAsString(String path) {
     final file = _preparePath(path);
     // ignore: avoid_dynamic_calls
-    final d = data is OwnType<dynamic> ? data.data : data;
+    final d = this is OwnType<dynamic> ? this.data : this;
 
     file.writeAsString('$d');
   }

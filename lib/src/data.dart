@@ -12,8 +12,11 @@ class Data<A, O extends DataOptions> {
   final O? options;
 
   /// Constructs a chain for transforms [A] to [other].
-  Data<dynamic, O> operator |(Data<dynamic, O> other) =>
-      Pipe(this, other).run();
+  Data<dynamic, O> operator |(Data<dynamic, O> other) => Data(
+        // ignore: inference_failure_on_instance_creation
+        const PipeFactory().construct(this, other, options).run(),
+        options: other.options,
+      );
 
   Data<B, O> cast<B>({O? optionsForCasted}) =>
       Data(data as B, options: optionsForCasted);

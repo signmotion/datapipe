@@ -1,19 +1,19 @@
 part of '../../data_pipe.dart';
 
-/// Pumping [File] to `const data = <int>[...]`.
-Data<DartConstListInt, DataOptions> pumpFileToDartConstListInt(
-  Data<File, DataOptions> a,
-  Data<DartConstListInt, DataOptions> b,
-) {
-  final bytes = a.data.readAsBytesSync().toList();
+class FileToDartConstListIntPipe
+    extends Pipe<File, DartConstListInt, DartConstListIntOptions> {
+  const FileToDartConstListIntPipe(
+    super.a,
+    super.b, {
+    super.options = const DartConstListIntOptions(),
+  });
 
-  final bo = b.options as DartConstListIntOptions?;
-  final name = bo?.name ?? const DartConstListIntOptions().name;
+  @override
+  DartConstListInt run() {
+    final bytes = a.readAsBytesSync().toList();
 
-  return D(
-    DartConstListInt('const $name = <int>[$bytes];'),
-    options: b.options,
-  );
+    return DartConstListInt('const ${options.name} = <int>[$bytes];');
+  }
 }
 
 class DartConstListInt extends OwnTypeString {
