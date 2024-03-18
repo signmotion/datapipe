@@ -9,24 +9,27 @@ Data<DartConstTagsBytes, DataOptions> pumpDirectoryToDartConstTagsBytes(
   const defaultsOptions = DartConstListTagsIntOptions();
   final name = bo?.name ?? defaultsOptions.name;
   final fileExtension = bo?.fileExtension ?? defaultsOptions.fileExtension;
+  final comment = bo?.comment ?? defaultsOptions.comment;
 
-  final files = a.data
-      .listSync(recursive: false)
-      .whereType<File>()
-      .where((entity) => fileExtension.isEmpty
+  final files = a.data.listSync(recursive: false).whereType<File>().where(
+      (entity) => fileExtension.isEmpty
           ? true
-          : p.extension(entity.path) == '.$fileExtension')
-      .toList();
+          : p.extension(entity.path) == '.$fileExtension');
   final l = <String>[];
   for (final file in files) {
-    final tags = p.withoutExtension(p.basename(file.path)).split('_');
+    final name = p.withoutExtension(p.basename(file.path));
+    l.add(newline);
+    if (comment) {
+      l.add('// ${file.path}$newline');
+    }
+    final tags = name.split('_');
     final bytes = file.readAsBytesSync();
-    l.add('(${jsonEncode(tags)}, ${jsonEncode(bytes)})');
+    l.add('(${jsonEncode(tags)}, ${jsonEncode(bytes)}),$newline');
   }
+  final sl = l.join();
 
   return D(
-    DartConstTagsBytes(
-        'const $name = <(List<String>, List<int>)>[${l.join(',\n')}];'),
+    DartConstTagsBytes('const $name = <(List<String>, List<int>)>[$sl];'),
     options: b.options,
   );
 }
@@ -39,6 +42,7 @@ class DartConstListTagsIntOptions extends DataOptions {
   const DartConstListTagsIntOptions({
     this.name = 'data',
     this.fileExtension = '',
+    this.comment = true,
   });
 
   /// A variable name into template.
@@ -46,4 +50,7 @@ class DartConstListTagsIntOptions extends DataOptions {
 
   /// An extension of files for processing a directory.
   final String fileExtension;
+
+  /// Adds a comment line before each record.
+  final bool comment;
 }
