@@ -6,12 +6,13 @@ Data<DartConstListInt, DataOptions> pumpFileToDartConstListInt(
   Data<DartConstListInt, DataOptions> b,
 ) {
   final bytes = a.data.readAsBytesSync().toList();
+  final sbytes = bytes.join(',');
 
   final bo = b.options as DartConstListIntOptions?;
   final name = bo?.name ?? const DartConstListIntOptions().name;
 
   return D(
-    DartConstListInt('const $name = <int>[$bytes];'),
+    DartConstListInt('const $name = <int>[$sbytes];'),
     options: b.options,
   );
 }
