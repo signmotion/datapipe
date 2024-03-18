@@ -11,9 +11,11 @@ void main() {
   test('directory to Dart const List<(tags, bytes)>', () {
     final r = (D(directory) | const D(DartConstTagsBytes()))
         .cast<DartConstTagsBytes>();
+    r.saveAsString('$testOutputPath/directory_to_dart_const_tags_bytes.dart');
+
     expect(
       r.data.data,
-      startsWith('const data = <(List<String>, List<int>)>['),
+      contains('const data = <(List<String>, List<int>)>['),
     );
     for (final tag in [
       'autumn',
@@ -34,7 +36,5 @@ void main() {
     ]) {
       expect(r.data.data, contains(tag));
     }
-
-    r.saveAsString('$testOutputPath/directory_to_dart_const_tags_bytes.dart');
   });
 }

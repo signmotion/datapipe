@@ -7,15 +7,22 @@ Data<DartConstTagsBytes, DataOptions> pumpDirectoryToDartConstTagsBytes(
 ) {
   final bo = b.options as DartConstListTagsIntOptions?;
   const defaultsOptions = DartConstListTagsIntOptions();
+  final header = bo?.header ?? defaultsOptions.header;
+  final footer = bo?.footer ?? defaultsOptions.footer;
   final name = bo?.name ?? defaultsOptions.name;
   final fileExtension = bo?.fileExtension ?? defaultsOptions.fileExtension;
   final comment = bo?.comment ?? defaultsOptions.comment;
+
+  final l = <String>[];
+  if (header.isNotEmpty) {
+    l.add('$header$newline$newline');
+  }
+  l.add('const $name = <(List<String>, List<int>)>[');
 
   final files = a.data.listSync(recursive: false).whereType<File>().where(
       (entity) => fileExtension.isEmpty
           ? true
           : p.extension(entity.path) == '.$fileExtension');
-  final l = <String>[];
   for (final file in files) {
     final name = p.withoutExtension(p.basename(file.path));
     l.add(newline);
@@ -26,12 +33,13 @@ Data<DartConstTagsBytes, DataOptions> pumpDirectoryToDartConstTagsBytes(
     final bytes = file.readAsBytesSync();
     l.add('(${jsonEncode(tags)}, ${jsonEncode(bytes)}),$newline');
   }
-  final sl = l.join();
 
-  return D(
-    DartConstTagsBytes('const $name = <(List<String>, List<int>)>[$sl];'),
-    options: b.options,
-  );
+  l.add('];$newline');
+  if (footer.isNotEmpty) {
+    l.add('$newline$footer$newline');
+  }
+
+  return D(DartConstTagsBytes(l.join()), options: b.options);
 }
 
 class DartConstTagsBytes extends OwnTypeString {
@@ -40,10 +48,18 @@ class DartConstTagsBytes extends OwnTypeString {
 
 class DartConstListTagsIntOptions extends DataOptions {
   const DartConstListTagsIntOptions({
+    this.header = '// ! AUTO GENERATED FILE ! //',
+    this.footer = '// ! AUTO GENERATED FILE ! //',
     this.name = 'data',
     this.fileExtension = '',
     this.comment = true,
   });
+
+  /// A header for template.
+  final String header;
+
+  /// A footer for template.
+  final String footer;
 
   /// A variable name into template.
   final String name;
