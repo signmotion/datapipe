@@ -5,7 +5,7 @@ Data<DartConstListInt, DataOptions> pumpFileToDartConstListInt(
   Data<File, DataOptions> a,
   Data<DartConstListInt, DataOptions> b,
 ) {
-  final bytes = a.data.readAsBytesSync().toList();
+  final bytes = a.data.readAsBytesSync();
   final sbytes = bytes.join(',');
 
   final bo = b.options as DartConstListIntOptions?;
