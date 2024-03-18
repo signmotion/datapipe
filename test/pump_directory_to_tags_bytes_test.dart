@@ -15,7 +15,25 @@ void main() {
       r.data.data,
       startsWith('const data = <(List<String>, List<int>)>['),
     );
-    expect(r.data.data, contains('bg'));
+    for (final tag in [
+      'autumn',
+      'bg',
+      'forest',
+      'flower',
+      'galaxy',
+      'house',
+      'lake',
+      'mountain',
+      'people',
+      'river',
+      'tree',
+      'star',
+      'sun',
+      'water',
+      'winter',
+    ]) {
+      expect(r.data.data, contains(tag));
+    }
 
     r.saveAsString('$testOutputPath/directory_to_dart_const_tags_bytes.dart');
   });
