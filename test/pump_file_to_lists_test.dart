@@ -6,7 +6,7 @@ import 'package:test/test.dart';
 import 'helpers/utils.dart';
 
 void main() {
-  final file = File('./test/data/images/bg_eye_1.webp');
+  final file = File('./test/data/images/bg_eye.webp');
 
   test('file to List<int>', () {
     final r = (D(file) | const D(<int>[])).cast<List<int>>();
