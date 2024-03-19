@@ -10,6 +10,12 @@
 An universal pump for data. It converted any formatted data to another any formatted data.
 Feel free to use it in your awesome project.
 
+## Concept
+
+```text
+Data A O===O |Pump| O===O Data B
+```
+
 ## Usage
 
 ### Pump to `List<int>`
@@ -389,15 +395,25 @@ input.o | <int>[].o | output.o;
 
 Look at `output` file.
 
-## Provided Pipes
+## Provided Pumps
 
-| 🔵 pipes 👉        | Base64String | DartConstListInt | DartConstTagsBytes | File | List<int> |
-| ------------------ | :----------: | :--------------: | :----------------: | :--: | :-------: |
-| Base64String       |              |                  |                    |      |           |
-| DartConstListInt   |              |                  |                    |      |           |
-| DartConstTagsBytes |              |                  |                    |      |           |
-| File               |              |                  |         ✅         |      |    ✅     |
-| List<int>          |              |        ✅        |                    |  ✅  |           |
+| 🔵 pipes ➡️  | Directory | Base64String | File | List<int> |
+| ------------ | :-------: | :----------: | :--: | :-------: |
+| Base64String |           |              |      |           |
+| Directory    |           |              |      |           |
+| File         |           |              |      |    ✅     |
+| List<int>    |           |              |  ✅  |           |
+
+## Specific Pumps
+
+I separated some pupms because I created them for my own projects and I guess they won't be useful in general cases. But you can use them too.
+
+| 🔵 pipes ➡️        | Directory | DartConstListInt | DartConstTagsBytes | File |
+| ------------------ | :-------: | :--------------: | :----------------: | :--: |
+| Directory          |           |                  |         ✅         |      |
+| DartConstListInt   |           |                  |                    |      |
+| DartConstTagsBytes |           |                  |                    |      |
+| File               |           |        ✅        |                    |      |
 
 ## Welcome
 
