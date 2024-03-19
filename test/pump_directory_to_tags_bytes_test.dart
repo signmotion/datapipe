@@ -8,9 +8,9 @@ import 'helpers/utils.dart';
 void main() {
   final directory = Directory('./test/data/images');
 
-  test('directory to Dart const List<(tags, bytes)>', () {
-    final r = (O(directory) | const O(DartConstTagsBytes()))
-        .cast<DartConstTagsBytes>();
+  test('Directory to DartConstTagsBytes', () {
+    final r =
+        (directory.o | const DartConstTagsBytes().o).cast<DartConstTagsBytes>();
     r.saveAsString('$testOutputPath/directory_to_dart_const_tags_bytes.dart');
 
     expect(
