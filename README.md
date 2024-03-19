@@ -431,13 +431,10 @@ Look at `output` file.
 
 I separated some pupms because I created them for my own projects and I guess they won't be useful in general cases. But you can use them too.
 
-| 🔵 pipes ➡️        | Directory | DartConstListInt | DartConstTagsBytes | File | String |
-| ------------------ | :-------: | :--------------: | :----------------: | :--: | :----: |
-| Directory          |           |                  |         ✅         |      |   ✅   |
-| DartConstListInt   |           |                  |                    |      |   ✅   |
-| DartConstTagsBytes |           |                  |                    |      |   ✅   |
-| File               |           |        ✅        |                    |      |   ✅   |
-| String             |           |                  |                    |      |   ✅   |
+| 🔵 pipes ➡️ | DartConstListInt | DartConstTagsBytes |
+| ----------- | :--------------: | :----------------: |
+| Directory   |                  |         ✅         |
+| File        |        ✅        |                    |
 
 ## Welcome
 
