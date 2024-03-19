@@ -379,6 +379,24 @@ print(r.data);
 
 </details>
 
+### Pump to File with `List<int>`
+
+```dart
+final input = File('./example/1.webp');
+final r = (D(input) | const D(<int>[]));
+print(r.data);
+```
+
+## Provided Pipes
+
+| 🔵 pipes 👉        | Base64String | DartConstListInt | DartConstTagsBytes | File | List<int> |
+| ------------------ | :----------: | :--------------: | :----------------: | :--: | :-------: |
+| Base64String       |              |                  |                    |      |           |
+| DartConstListInt   |              |                  |                    |      |           |
+| DartConstTagsBytes |              |                  |                    |      |           |
+| File               |              |                  |         ✅         |      |    ✅     |
+| List<int>          |              |        ✅        |                    |  ✅  |           |
+
 ## Welcome
 
 Requests and suggestions are warmly welcome.
