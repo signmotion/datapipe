@@ -1,13 +1,14 @@
 part of '../../data_pipe.dart';
 
 /// Pumping files from [Directory] to [String]
-/// `const data = <(tags, bytes)>[...]`.
-Data<DartConstTagsBytes, DataOptions> pumpDirectoryToDartConstTagsBytes(
-  Data<Directory, DataOptions> a,
-  Data<DartConstTagsBytes, DataOptions> b,
+/// `const data = <(tags, bytes)>[...]` with header, footer and comments.
+/// See [DartConstTagsBytesOptions].
+Pipe<DartConstTagsBytes, PipeOptions> pumpDirectoryToDartConstTagsBytes(
+  Pipe<Directory, PipeOptions> a,
+  Pipe<DartConstTagsBytes, PipeOptions> b,
 ) {
-  final bo = b.options as DartConstListTagsIntOptions?;
-  const defaultsOptions = DartConstListTagsIntOptions();
+  final bo = b.options as DartConstTagsBytesOptions?;
+  const defaultsOptions = DartConstTagsBytesOptions();
   final header = bo?.header ?? defaultsOptions.header;
   final footer = bo?.footer ?? defaultsOptions.footer;
   final name = bo?.name ?? defaultsOptions.name;
@@ -47,8 +48,8 @@ class DartConstTagsBytes extends OwnTypeString {
   const DartConstTagsBytes([super.data = '']);
 }
 
-class DartConstListTagsIntOptions extends DataOptions {
-  const DartConstListTagsIntOptions({
+class DartConstTagsBytesOptions extends PipeOptions {
+  const DartConstTagsBytesOptions({
     this.header = '// ! AUTO GENERATED FILE ! //',
     this.footer = '// ! AUTO GENERATED FILE ! //',
     this.name = 'data',

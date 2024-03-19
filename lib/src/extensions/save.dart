@@ -1,14 +1,14 @@
 part of '../../data_pipe.dart';
 
-extension SaveDataListIntExt on Data<List<int>, DataOptions> {
+extension SaveDataListIntExt on Pipe<List<int>, PipeOptions> {
   void saveToFile(String path) => _preparePath(path).writeAsBytesSync(data);
 }
 
-extension SaveDataStringExt on Data<String, DataOptions> {
+extension SaveDataStringExt on Pipe<String, PipeOptions> {
   void saveToFile(String path) => _preparePath(path).writeAsStringSync(data);
 }
 
-extension SaveAsStringDataDynamicExt on Data<dynamic, DataOptions> {
+extension SaveAsStringDataDynamicExt on Pipe<dynamic, PipeOptions> {
   void saveAsString(String path) {
     final file = _preparePath(path);
     // ignore: avoid_dynamic_calls

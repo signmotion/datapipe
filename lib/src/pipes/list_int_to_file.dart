@@ -1,11 +1,11 @@
 part of '../../data_pipe.dart';
 
 /// Pumping [List<int>] to [File].
-Data<File, DataOptions> pumpListIntToFile(
-  Data<List<int>, DataOptions> a,
-  Data<File, DataOptions> b,
+Pipe<File, PipeOptions> pumpListIntToFile(
+  Pipe<List<int>, PipeOptions> a,
+  Pipe<File, PipeOptions> b,
 ) =>
-    Data(
+    Pipe(
       b.data
         ..createSync(recursive: true)
         ..writeAsString('$a'),

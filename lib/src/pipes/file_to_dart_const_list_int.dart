@@ -2,9 +2,10 @@ part of '../../data_pipe.dart';
 
 /// Pumping [File] to [String]
 /// `const data = <int>[...]`.
-Data<DartConstListInt, DataOptions> pumpFileToDartConstListInt(
-  Data<File, DataOptions> a,
-  Data<DartConstListInt, DataOptions> b,
+/// See [DartConstListIntOptions].
+Pipe<DartConstListInt, PipeOptions> pumpFileToDartConstListInt(
+  Pipe<File, PipeOptions> a,
+  Pipe<DartConstListInt, PipeOptions> b,
 ) {
   final bytes = a.data.readAsBytesSync();
   final sbytes = bytes.join(',');
@@ -22,7 +23,7 @@ class DartConstListInt extends OwnTypeString {
   const DartConstListInt([super.data = '']);
 }
 
-class DartConstListIntOptions extends DataOptions {
+class DartConstListIntOptions extends PipeOptions {
   const DartConstListIntOptions({this.name = 'data'});
 
   /// A variable name into template.

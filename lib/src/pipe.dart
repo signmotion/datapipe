@@ -1,42 +1,29 @@
 part of '../data_pipe.dart';
 
-/// A base class for data pipe.
-class Pipe<A extends Data<dynamic, OA>, B extends Data<dynamic, OB>,
-    OA extends DataOptions, OB extends DataOptions> {
-  const Pipe(this.a, this.b);
+/// Alias for [Pipe].
+/// `O` looks like pipe.
+typedef O<A, P extends PipeOptions> = Pipe<A, P>;
 
-  final A a;
-  final B b;
+/// A wrapper for data.
+/// See [O].
+class Pipe<A, P extends PipeOptions> {
+  const Pipe(this.data, {this.options});
 
-  B run() => switch ((a, b)) {
-        // Directory
-        (
-          Data<Directory, DataOptions> ca,
-          Data<DartConstTagsBytes, DataOptions> cb,
-        ) =>
-          pumpDirectoryToDartConstTagsBytes(ca, cb) as B,
+  final A data;
+  final P? options;
 
-        // File
-        (
-          Data<File, DataOptions> ca,
-          Data<DartConstListInt, DataOptions> cb,
-        ) =>
-          pumpFileToDartConstListInt(ca, cb) as B,
-        (
-          Data<File, DataOptions> ca,
-          Data<List<int>, DataOptions> cb,
-        ) =>
-          pumpFileToListInt(ca, cb) as B,
+  /// Constructs a chain for transforms [A] to [other].
+  Pipe<dynamic, P> operator |(Pipe<dynamic, P> other) =>
+      Pump(this, other).run();
 
-        // List<int>
-        (
-          Data<List<int>, DataOptions> ca,
-          Data<File, DataOptions> cb,
-        ) =>
-          pumpListIntToFile(ca, cb) as B,
+  Pipe<B, P> cast<B>({P? optionsForCasted}) =>
+      Pipe(data as B, options: optionsForCasted);
 
-        // unimplemented
-        _ => throw UnimplementedError(' The pipe from `$a.runtimeType`'
-            ' to `${b.runtimeType}` unimplemented.'),
-      };
+  @override
+  String toString() => '$data';
+}
+
+/// A base class for options.
+abstract class PipeOptions {
+  const PipeOptions();
 }
