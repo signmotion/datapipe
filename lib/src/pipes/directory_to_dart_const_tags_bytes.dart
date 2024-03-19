@@ -1,4 +1,4 @@
-part of '../../data_pipe.dart';
+part of '../../datapipe.dart';
 
 /// Pumping files from [Directory] to [String]
 /// `const data = <(tags, bytes)>[...]` with header, footer and comments.

@@ -1,7 +1,7 @@
-name: data_pipe
+name: datapipe
 description: >-
   An universal pump for data. It converted any formatted data to another any formatted data.
-repository: https://github.com/signmotion/data_pipe
+repository: https://github.com/signmotion/datapipe
 topics:
   - converter
   - data

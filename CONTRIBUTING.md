@@ -63,7 +63,7 @@ and it will be automatically reflected in the PR.
   [file a bug or feature report][GitHub issues], so that we can discuss what direction to follow.
 - [Fork the project][fork guide] on GitHub.
 - Clone the forked repository to your local development machine
-  (e.g. `git clone git@github.com:<YOUR_GITHUB_USER>/data_pipe.git`).
+  (e.g. `git clone git@github.com:<YOUR_GITHUB_USER>/datapipe.git`).
 
 ### Performing changes
 
@@ -91,8 +91,8 @@ Examples of such types:
 If you introduce a **breaking change** the conventional commit type MUST end with an exclamation
 mark (e.g. `feat!: Remove the argument from ZipLoader.getFile()`).
 
-[GitHub issue]: https://github.com/signmotion/data_pipe/issues/new
-[GitHub issues]: https://github.com/signmotion/data_pipe/issues
-[PRs]: https://github.com/signmotion/data_pipe/pulls
+[GitHub issue]: https://github.com/signmotion/datapipe/issues/new
+[GitHub issues]: https://github.com/signmotion/datapipe/issues
+[PRs]: https://github.com/signmotion/datapipe/pulls
 [fork guide]: https://guides.github.com/activities/forking/#fork
 [conventional commit]: https://www.conventionalcommits.org

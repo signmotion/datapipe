@@ -1,4 +1,4 @@
-part of '../data_pipe.dart';
+part of '../datapipe.dart';
 
 /// A pump for [Pipe].
 class Pump<A extends Pipe<dynamic, OA>, B extends Pipe<dynamic, OB>,

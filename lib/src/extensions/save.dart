@@ -1,4 +1,4 @@
-part of '../../data_pipe.dart';
+part of '../../datapipe.dart';
 
 extension SaveDataListIntExt on Pipe<List<int>, PipeOptions> {
   void saveToFile(String path) => _preparePath(path).writeAsBytesSync(data);

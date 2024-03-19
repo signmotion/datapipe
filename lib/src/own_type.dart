@@ -1,4 +1,4 @@
-part of '../data_pipe.dart';
+part of '../datapipe.dart';
 
 abstract class OwnTypeString extends OwnType<String> {
   const OwnTypeString(super.data);

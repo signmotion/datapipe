@@ -1,4 +1,4 @@
-part of '../../data_pipe.dart';
+part of '../../datapipe.dart';
 
 /// Pumping [List<int>] to [File].
 Pipe<File, PipeOptions> pumpListIntToFile(

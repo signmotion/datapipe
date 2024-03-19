@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:data_pipe/data_pipe.dart';
+import 'package:datapipe/datapipe.dart';
 import 'package:test/test.dart';
 
 import 'helpers/utils.dart';

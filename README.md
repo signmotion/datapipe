@@ -1,11 +1,11 @@
 # DataPipe
 
-![Cover - DataPipe](https://raw.githubusercontent.com/signmotion/data_pipe/master/images/cover.webp)
+![Cover - DataPipe](https://raw.githubusercontent.com/signmotion/datapipe/master/images/cover.webp)
 
 [![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Pub Package](https://img.shields.io/badge/doc-data_pipe-blue)](https://pub.dartlang.org/packages/data_pipe)
-[![Build Status](https://github.com/signmotion/data_pipe/actions/workflows/dart-ci.yml/badge.svg)](https://github.com/signmotion/data_pipe/actions/workflows/dart-ci.yml)
-[![Publisher](https://img.shields.io/pub/publisher/data_pipe)](https://pub.dev/publishers/syrokomskyi.com)
+[![Pub Package](https://img.shields.io/badge/doc-datapipe-blue)](https://pub.dartlang.org/packages/datapipe)
+[![Build Status](https://github.com/signmotion/datapipe/actions/workflows/dart-ci.yml/badge.svg)](https://github.com/signmotion/datapipe/actions/workflows/dart-ci.yml)
+[![Publisher](https://img.shields.io/pub/publisher/datapipe)](https://pub.dev/publishers/syrokomskyi.com)
 
 An universal pump for data. It converted any formatted data to another any formatted data.
 Feel free to use it in your awesome project.
@@ -13,8 +13,13 @@ Feel free to use it in your awesome project.
 ## Concept
 
 ```text
-Data A O===O |Pump| O===O Data B
+A O===O |Pump| O===O B
 ```
+
+where
+
+- `A` formatted data
+- `B` other formatted data
 
 ## Usage
 
@@ -420,11 +425,11 @@ I separated some pupms because I created them for my own projects and I guess th
 Requests and suggestions are warmly welcome.
 
 This package is open-source, stable and well-tested. Development happens on
-[GitHub](https://github.com/signmotion/data_pipe). Feel free to report issues
+[GitHub](https://github.com/signmotion/datapipe). Feel free to report issues
 or create a pull-request there.
 
 General questions are best asked on
-[StackOverflow](https://stackoverflow.com/questions/tagged/data_pipe).
+[StackOverflow](https://stackoverflow.com/questions/tagged/datapipe).
 
 ## TODO
 

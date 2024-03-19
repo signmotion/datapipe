@@ -1,4 +1,4 @@
-part of '../data_pipe.dart';
+part of '../datapipe.dart';
 
 /// Alias for [Pipe].
 /// `O` looks like pipe.

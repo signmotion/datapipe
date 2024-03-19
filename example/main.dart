@@ -2,7 +2,7 @@
 
 import 'dart:io';
 
-import 'package:data_pipe/data_pipe.dart';
+import 'package:datapipe/datapipe.dart';
 
 void main() {
   // pump to List<int>

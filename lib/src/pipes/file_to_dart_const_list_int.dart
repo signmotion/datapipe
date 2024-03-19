@@ -1,4 +1,4 @@
-part of '../../data_pipe.dart';
+part of '../../datapipe.dart';
 
 /// Pumping [File] to [String]
 /// `const data = <int>[...]`.
