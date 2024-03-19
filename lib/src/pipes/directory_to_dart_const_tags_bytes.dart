@@ -40,7 +40,7 @@ Data<DartConstTagsBytes, DataOptions> pumpDirectoryToDartConstTagsBytes(
     l.add('$newline$footer$newline');
   }
 
-  return D(DartConstTagsBytes(l.join()), options: b.options);
+  return O(DartConstTagsBytes(l.join()), options: b.options);
 }
 
 class DartConstTagsBytes extends OwnTypeString {

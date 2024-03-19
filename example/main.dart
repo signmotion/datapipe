@@ -8,7 +8,7 @@ void main() {
   // pump to List<int>
   {
     final file = File('./example/1.webp');
-    final r = D(file) | const D(<int>[]);
+    final r = O(file) | const O(<int>[]);
     print(r);
   }
 
@@ -16,7 +16,7 @@ void main() {
   {
     final input = File('./example/1.webp');
     final output = File('./_output/1.json');
-    D(input) | const D(<int>[]) | D(output);
+    O(input) | const O(<int>[]) | O(output);
     // look at [output] file
   }
 }

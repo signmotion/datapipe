@@ -16,7 +16,7 @@ Feel free to use it in your awesome project.
 
 ```dart
 final file = File('./example/1.webp');
-final r = (D(file) | const D(<int>[]));
+final r = O(file) | const O(<int>[]);
 print(r.data);
 ```
 
@@ -379,13 +379,15 @@ print(r.data);
 
 </details>
 
-### Pump to File with `List<int>`
+### Pump to `File` with `List<int>`
 
 ```dart
 final input = File('./example/1.webp');
-final r = (D(input) | const D(<int>[]));
-print(r.data);
+final output = File('./_output/1.json');
+O(input) | const O(<int>[]) | O(output);
 ```
+
+Look at `output` file.
 
 ## Provided Pipes
 

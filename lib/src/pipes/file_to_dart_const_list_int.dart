@@ -12,7 +12,7 @@ Data<DartConstListInt, DataOptions> pumpFileToDartConstListInt(
   final bo = b.options as DartConstListIntOptions?;
   final name = bo?.name ?? const DartConstListIntOptions().name;
 
-  return D(
+  return O(
     DartConstListInt('const $name = <int>[$sbytes];'),
     options: b.options,
   );
