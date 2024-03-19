@@ -1,6 +1,6 @@
 part of '../datapipe.dart';
 
-/// A pump for [Pipe].
+/// A universal pump for [Pipe].
 class Pump<A extends Pipe<dynamic, OA>, B extends Pipe<dynamic, OB>,
     OA extends PipeOptions, OB extends PipeOptions> {
   const Pump(this.a, this.b);
@@ -29,6 +29,11 @@ class Pump<A extends Pipe<dynamic, OA>, B extends Pipe<dynamic, OB>,
           pumpFileToListInt(ca, cb) as B,
 
         // List<int>
+        (
+          Pipe<List<int>, PipeOptions> ca,
+          Pipe<Base64String, PipeOptions> cb,
+        ) =>
+          pumpListIntToBase64String(ca, cb) as B,
         (
           Pipe<List<int>, PipeOptions> ca,
           Pipe<File, PipeOptions> cb,

@@ -8,4 +8,7 @@ abstract class OwnType<T> {
   const OwnType(this.data);
 
   final T data;
+
+  @override
+  String toString() => '$data';
 }
