@@ -419,12 +419,12 @@ Look at `output` file.
 
 ## Provided Pumps
 
-| 🔵 pipes ➡️  | Directory | Base64String | File | List<int> |
-| ------------ | :-------: | :----------: | :--: | :-------: |
-| Base64String |           |              |      |           |
-| Directory    |           |              |      |           |
-| File         |           |              |      |    ✅     |
-| List<int>    |           |      ✅      |  ✅  |           |
+| 🔵 pipes ➡️  | Directory | Base64String | File | List\<int\> |
+| ------------ | :-------: | :----------: | :--: | :---------: |
+| Base64String |           |              |      |             |
+| Directory    |           |              |      |             |
+| File         |           |              |      |     ✅      |
+| List\<int\>  |           |      ✅      |  ✅  |             |
 
 ## Specific Pumps
 
@@ -450,4 +450,4 @@ General questions are best asked on
 
 ## TODO
 
-- More needed data pipes.
+- More data pipes.
