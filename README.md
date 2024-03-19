@@ -16,8 +16,8 @@ Feel free to use it in your awesome project.
 
 ```dart
 final file = File('./example/1.webp');
-final r = O(file) | const O(<int>[]);
-print(r.data);
+final r = file.o | <int>[].o;
+print(r);
 ```
 
 <details>
@@ -384,7 +384,7 @@ print(r.data);
 ```dart
 final input = File('./example/1.webp');
 final output = File('./_output/1.json');
-O(input) | const O(<int>[]) | O(output);
+input.o | <int>[].o | output.o;
 ```
 
 Look at `output` file.
@@ -412,4 +412,4 @@ General questions are best asked on
 
 ## TODO
 
-- More needed for projects data pipes.
+- More needed data pipes.
