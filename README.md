@@ -396,7 +396,7 @@ print(r);
 
 ```dart
 final file = File('./example/1.webp');
-final r = file.o | <int>[].o;
+final r = file.o | <int>[].o | Base64String().o;
 print(r);
 ```
 
