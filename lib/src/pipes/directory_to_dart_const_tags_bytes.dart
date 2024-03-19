@@ -1,6 +1,7 @@
 part of '../../data_pipe.dart';
 
-/// Pumping files from [Directory] to `const data = <(tags, bytes)>[...]`.
+/// Pumping files from [Directory] to [String]
+/// `const data = <(tags, bytes)>[...]`.
 Data<DartConstTagsBytes, DataOptions> pumpDirectoryToDartConstTagsBytes(
   Data<Directory, DataOptions> a,
   Data<DartConstTagsBytes, DataOptions> b,

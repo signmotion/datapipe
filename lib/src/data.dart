@@ -17,6 +17,9 @@ class Data<A, O extends DataOptions> {
 
   Data<B, O> cast<B>({O? optionsForCasted}) =>
       Data(data as B, options: optionsForCasted);
+
+  @override
+  String toString() => '$data';
 }
 
 /// A base class for options.

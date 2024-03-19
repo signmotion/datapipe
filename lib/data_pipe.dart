@@ -10,6 +10,7 @@ part 'src/extensions/save.dart';
 part 'src/pipes/directory_to_dart_const_tags_bytes.dart';
 part 'src/pipes/file_to_dart_const_list_int.dart';
 part 'src/pipes/file_to_list_int.dart';
+part 'src/pipes/list_int_to_file.dart';
 
 part 'src/constants.dart';
 part 'src/data.dart';

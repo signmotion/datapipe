@@ -1,6 +1,7 @@
 part of '../../data_pipe.dart';
 
-/// Pumping [File] to `const data = <int>[...]`.
+/// Pumping [File] to [String]
+/// `const data = <int>[...]`.
 Data<DartConstListInt, DataOptions> pumpFileToDartConstListInt(
   Data<File, DataOptions> a,
   Data<DartConstListInt, DataOptions> b,
