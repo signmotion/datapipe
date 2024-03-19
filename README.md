@@ -13,13 +13,15 @@ Feel free to use it in your awesome project.
 ## Concept
 
 ```dart
-A O===O |Pump| O===O B
+a O===O |PUMP| O===O b
+
+O==a==O |PUMP| O==b==O
 ```
 
 where
 
-- `A` formatted data
-- `B` other formatted data
+- `a` formatted data
+- `b` other formatted data
 
 ## Usage
 
