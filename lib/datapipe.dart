@@ -10,6 +10,7 @@ import 'src/constants.dart';
 part 'src/extensions/pipe.dart';
 part 'src/extensions/save.dart';
 
+part 'src/pumps/any_to_string.dart';
 part 'src/pumps/directory_to_dart_const_tags_bytes.dart';
 part 'src/pumps/file_to_dart_const_list_int.dart';
 part 'src/pumps/file_to_list_int.dart';

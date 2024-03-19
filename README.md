@@ -12,7 +12,7 @@ Feel free to use it in your awesome project.
 
 ## Concept
 
-```text
+```dart
 A O===O |Pump| O===O B
 ```
 
@@ -419,23 +419,25 @@ Look at `output` file.
 
 ## Provided Pumps
 
-| 🔵 pipes ➡️  | Directory | Base64String | File | List\<int\> |
-| ------------ | :-------: | :----------: | :--: | :---------: |
-| Base64String |           |              |      |             |
-| Directory    |           |              |      |             |
-| File         |           |              |      |     ✅      |
-| List\<int\>  |           |      ✅      |  ✅  |             |
+| 🔵 pipes ➡️  | Directory | Base64String | File | List\<int\> | String |
+| ------------ | :-------: | :----------: | :--: | :---------: | :----: |
+| Base64String |           |              |      |             |   ✅   |
+| Directory    |           |              |      |             |   ✅   |
+| File         |           |              |      |     ✅      |   ✅   |
+| List\<int\>  |           |      ✅      |  ✅  |             |   ✅   |
+| String       |           |              |      |             |   ✅   |
 
 ## Specific Pumps
 
 I separated some pupms because I created them for my own projects and I guess they won't be useful in general cases. But you can use them too.
 
-| 🔵 pipes ➡️        | Directory | DartConstListInt | DartConstTagsBytes | File |
-| ------------------ | :-------: | :--------------: | :----------------: | :--: |
-| Directory          |           |                  |         ✅         |      |
-| DartConstListInt   |           |                  |                    |      |
-| DartConstTagsBytes |           |                  |                    |      |
-| File               |           |        ✅        |                    |      |
+| 🔵 pipes ➡️        | Directory | DartConstListInt | DartConstTagsBytes | File | String |
+| ------------------ | :-------: | :--------------: | :----------------: | :--: | :----: |
+| Directory          |           |                  |         ✅         |      |   ✅   |
+| DartConstListInt   |           |                  |                    |      |   ✅   |
+| DartConstTagsBytes |           |                  |                    |      |   ✅   |
+| File               |           |        ✅        |                    |      |   ✅   |
+| String             |           |                  |                    |      |   ✅   |
 
 ## Welcome
 
