@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_dynamic_calls
+
 import 'dart:io';
 
 import 'package:datapipe/datapipe.dart';
@@ -9,8 +11,7 @@ void main() {
   final directory = Directory('./test/data/images');
 
   test('Directory to DartConstTagsBytes', () {
-    final r =
-        (directory.o | const DartConstTagsBytes().o).cast<DartConstTagsBytes>();
+    final r = directory.o | const DartConstTagsBytes().o;
     r.saveAsString('$testOutputPath/directory_to_dart_const_tags_bytes.dart');
 
     expect(
