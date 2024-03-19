@@ -41,7 +41,7 @@ class Pump<A extends Pipe<dynamic, OA>, B extends Pipe<dynamic, OB>,
           pumpListIntToFile(ca, cb) as B,
 
         // unimplemented
-        _ => throw UnimplementedError(' The pipe from `$a.runtimeType`'
+        _ => throw UnimplementedError(' The pipe from `${a.runtimeType}`'
             ' to `${b.runtimeType}` unimplemented.'),
       };
 }
