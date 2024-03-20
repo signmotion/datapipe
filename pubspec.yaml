@@ -1,6 +1,6 @@
 name: datapipe
 description: >-
-  An universal pump for data. It converted any formatted data to another any formatted data.
+  Universal data pump. It converts data of any format into data of another format.
 repository: https://github.com/signmotion/datapipe
 topics:
   - converter

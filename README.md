@@ -7,7 +7,7 @@
 [![Build Status](https://github.com/signmotion/datapipe/actions/workflows/dart-ci.yml/badge.svg)](https://github.com/signmotion/datapipe/actions/workflows/dart-ci.yml)
 [![Publisher](https://img.shields.io/pub/publisher/datapipe)](https://pub.dev/publishers/syrokomskyi.com)
 
-An universal pump for data. It converted any formatted data to another any formatted data.
+Universal data pump. It converts data of any format into data of another format.
 Feel free to use it in your awesome project.
 
 ## Concept
