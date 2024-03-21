@@ -3,12 +3,19 @@
 ![Cover - DataPipe](https://raw.githubusercontent.com/signmotion/datapipe/master/images/cover.webp)
 
 [![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Pub Package](https://img.shields.io/badge/doc-datapipe-blue)](https://pub.dartlang.org/packages/datapipe)
-[![Build Status](https://github.com/signmotion/datapipe/actions/workflows/dart-ci.yml/badge.svg)](https://github.com/signmotion/datapipe/actions/workflows/dart-ci.yml)
+[![Pub Package](https://img.shields.io/pub/v/datapipe.svg?logo=dart&logoColor=00b9fc&color=blue)](https://pub.dartlang.org/packages/datapipe)
+[![Code Size](https://img.shields.io/github/languages/code-size/signmotion/datapipe?logo=github&logoColor=white)](https://github.com/signmotion/datapipe)
 [![Publisher](https://img.shields.io/pub/publisher/datapipe)](https://pub.dev/publishers/syrokomskyi.com)
+
+[![Build Status](https://img.shields.io/github/actions/workflow/status/signmotion/datapipe/dart-ci.yml?logo=github-actions&logoColor=white)](https://github.com/signmotion/datapipe/actions)
+[![Pull Requests](https://img.shields.io/github/issues-pr/signmotion/datapipe?logo=github&logoColor=white)](https://github.com/signmotion/datapipe/pulls)
+[![Issues](https://img.shields.io/github/issues/signmotion/datapipe?logo=github&logoColor=white)](https://github.com/signmotion/datapipe/issues)
+[![Pub Score](https://img.shields.io/pub/points/datapipe?logo=dart&logoColor=00b9fc)](https://pub.dev/packages/datapipe/score)
 
 Universal data pump. It converts data of any format into data of another format.
 Feel free to use it in your awesome project.
+
+Share some ❤️ and star repo to support the project.
 
 ## Concept
 
@@ -451,3 +458,5 @@ General questions are best asked on
 ## TODO
 
 - More data pipes.
+
+Created [with ❤️](https://syrokomskyi.com)
