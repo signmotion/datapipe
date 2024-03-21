@@ -1,13 +1,20 @@
-part of '../../datapipe.dart';
+import 'dart:io';
+
+import '../../datapipe.dart';
+
+typedef _A = List<int>;
+typedef _B = File;
 
 /// Pumping [List<int>] to [File].
-Pipe<File, PipeOptions> pumpListIntToFile(
-  Pipe<List<int>, PipeOptions> a,
-  Pipe<File, PipeOptions> b,
-) =>
-    Pipe(
-      b.data
-        ..createSync(recursive: true)
-        ..writeAsString('$a'),
-      options: b.options,
-    );
+class ListIntToFilePump
+    extends Pump<Pipe<_A, PipeOptions>, Pipe<_B, PipeOptions>> {
+  const ListIntToFilePump(super.a, super.b);
+
+  @override
+  Pipe<_B, PipeOptions> run() => Pipe(
+        b.data
+          ..createSync(recursive: true)
+          ..writeAsString('$a'),
+        options: b.options,
+      );
+}

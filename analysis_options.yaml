@@ -6,6 +6,9 @@ analyzer:
     strict-inference: true
     strict-raw-types: true
 
+  errors:
+    library_private_types_in_public_api: ignore
+
   exclude: [build/**, lib/**.g.dart]
 
 linter:

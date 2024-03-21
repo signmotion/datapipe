@@ -1,22 +1,30 @@
-part of '../../datapipe.dart';
+import 'dart:io';
+
+import '../../datapipe.dart';
+
+typedef _A = File;
+typedef _B = DartConstListInt;
 
 /// Pumping [File] to [String]
 /// `const data = <int>[...]`.
 /// See [DartConstListIntOptions].
-Pipe<DartConstListInt, PipeOptions> pumpFileToDartConstListInt(
-  Pipe<File, PipeOptions> a,
-  Pipe<DartConstListInt, PipeOptions> b,
-) {
-  final bytes = a.data.readAsBytesSync();
-  final sbytes = bytes.join(',');
+class FileToDartConstListIntPump
+    extends Pump<Pipe<_A, PipeOptions>, Pipe<_B, PipeOptions>> {
+  const FileToDartConstListIntPump(super.a, super.b);
 
-  final bo = b.options as DartConstListIntOptions?;
-  final name = bo?.name ?? const DartConstListIntOptions().name;
+  @override
+  Pipe<_B, PipeOptions> run() {
+    final bytes = a.data.readAsBytesSync();
+    final sbytes = bytes.join(',');
 
-  return O(
-    DartConstListInt('const $name = <int>[$sbytes];'),
-    options: b.options,
-  );
+    final bo = b.options as DartConstListIntOptions?;
+    final name = bo?.name ?? const DartConstListIntOptions().name;
+
+    return O(
+      DartConstListInt('const $name = <int>[$sbytes];'),
+      options: b.options,
+    );
+  }
 }
 
 class DartConstListInt extends OwnTypeString {

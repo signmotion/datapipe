@@ -1,47 +1,59 @@
-part of '../../datapipe.dart';
+import 'dart:convert';
+import 'dart:io';
+
+import 'package:path/path.dart' as p;
+
+import '../../datapipe.dart';
+import '../constants.dart';
+
+typedef _A = Directory;
+typedef _B = DartConstTagsBytes;
 
 /// Pumping files from [Directory] to [String]
 /// `const data = <(tags, bytes)>[...]` with header, footer and comments.
 /// See [DartConstTagsBytesOptions].
-Pipe<DartConstTagsBytes, PipeOptions> pumpDirectoryToDartConstTagsBytes(
-  Pipe<Directory, PipeOptions> a,
-  Pipe<DartConstTagsBytes, PipeOptions> b,
-) {
-  final bo = b.options as DartConstTagsBytesOptions?;
-  const defaultsOptions = DartConstTagsBytesOptions();
-  final header = bo?.header ?? defaultsOptions.header;
-  final footer = bo?.footer ?? defaultsOptions.footer;
-  final name = bo?.name ?? defaultsOptions.name;
-  final fileExtension = bo?.fileExtension ?? defaultsOptions.fileExtension;
-  final comment = bo?.comment ?? defaultsOptions.comment;
+class DirectoryToDartConstTagsBytePump
+    extends Pump<Pipe<_A, PipeOptions>, Pipe<_B, PipeOptions>> {
+  const DirectoryToDartConstTagsBytePump(super.a, super.b);
 
-  final l = <String>[];
-  if (header.isNotEmpty) {
-    l.add('$header$newline$newline');
-  }
-  l.add('const $name = <(List<String>, List<int>)>[');
+  @override
+  Pipe<_B, PipeOptions> run() {
+    final bo = b.options as DartConstTagsBytesOptions?;
+    const defaultsOptions = DartConstTagsBytesOptions();
+    final header = bo?.header ?? defaultsOptions.header;
+    final footer = bo?.footer ?? defaultsOptions.footer;
+    final name = bo?.name ?? defaultsOptions.name;
+    final fileExtension = bo?.fileExtension ?? defaultsOptions.fileExtension;
+    final comment = bo?.comment ?? defaultsOptions.comment;
 
-  final files = a.data.listSync(recursive: false).whereType<File>().where(
-      (entity) => fileExtension.isEmpty
-          ? true
-          : p.extension(entity.path) == '.$fileExtension');
-  for (final file in files) {
-    final name = p.withoutExtension(p.basename(file.path));
-    l.add(newline);
-    if (comment) {
-      l.add('// ${file.path}$newline');
+    final l = <String>[];
+    if (header.isNotEmpty) {
+      l.add('$header$newline$newline');
     }
-    final tags = name.split('_');
-    final bytes = file.readAsBytesSync();
-    l.add('(${jsonEncode(tags)}, ${jsonEncode(bytes)}),$newline');
-  }
+    l.add('const $name = <(List<String>, List<int>)>[');
 
-  l.add('];$newline');
-  if (footer.isNotEmpty) {
-    l.add('$newline$footer$newline');
-  }
+    final files = a.data.listSync(recursive: false).whereType<File>().where(
+        (entity) => fileExtension.isEmpty
+            ? true
+            : p.extension(entity.path) == '.$fileExtension');
+    for (final file in files) {
+      final name = p.withoutExtension(p.basename(file.path));
+      l.add(newline);
+      if (comment) {
+        l.add('// ${file.path}$newline');
+      }
+      final tags = name.split('_');
+      final bytes = file.readAsBytesSync();
+      l.add('(${jsonEncode(tags)}, ${jsonEncode(bytes)}),$newline');
+    }
 
-  return O(DartConstTagsBytes(l.join()), options: b.options);
+    l.add('];$newline');
+    if (footer.isNotEmpty) {
+      l.add('$newline$footer$newline');
+    }
+
+    return O(DartConstTagsBytes(l.join()), options: b.options);
+  }
 }
 
 class DartConstTagsBytes extends OwnTypeString {
