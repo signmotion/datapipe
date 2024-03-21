@@ -19,15 +19,15 @@ Share some ❤️ and star repo to support the project.
 
 ## Concept
 
-```dart
-a O===O |PUMP| O===O b
-O==a==O |PUMP| O==b==O
+```js
+1 O===O |PUMP| O===O 2
+O==1==O |PUMP| O==2==O
 ```
 
 where
 
-- `a` formatted data
-- `b` other formatted data
+- `1` formatted data
+- `2` other formatted data
 
 ## Usage
 
