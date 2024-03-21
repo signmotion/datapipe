@@ -12,7 +12,7 @@ void main() {
     print(r);
   }
 
-  // pump binary File to Base64String
+  // pumping binary File to Base64String
   {
     final file = File('./example/1.webp');
     final r = file.o | <int>[].o | const Base64String().o;
