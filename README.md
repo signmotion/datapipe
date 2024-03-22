@@ -19,7 +19,7 @@ Share some ❤️ and star repo to support the project.
 
 ## Concept
 
-```js
+```dart
 1 O===O |PUMP| O===O 2
 O==1==O |PUMP| O==2==O
 ```
@@ -34,7 +34,7 @@ where
 ### Pump from `File` to `List<int>`
 
 ```dart
-final file = File('./example/1.webp');
+final file = File('1.webp');
 final r = file.o | <int>[].o;
 print(r);
 ```
@@ -401,7 +401,7 @@ print(r);
 ### Pump from `File` to `Base64String`
 
 ```dart
-final file = File('./example/1.webp');
+final file = File('1.webp');
 final r = file.o | <int>[].o | Base64String().o;
 print(r);
 ```
@@ -418,12 +418,12 @@ print(r);
 ### Pump from `File` to `File` with `List<int>`
 
 ```dart
-final input = File('./example/1.webp');
-final output = File('./_output/1.json');
+final input = File('1.webp');
+final output = File('1.json');
 input.o | <int>[].o | output.o;
 ```
 
-Look at `output` file.
+Look at the output of first example or `output` file.
 
 ## Provided Pumps
 
