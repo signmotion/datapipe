@@ -13,6 +13,7 @@
 [![Pub Score](https://img.shields.io/pub/points/datapipe?logo=dart&logoColor=00b9fc)](https://pub.dev/packages/datapipe/score)
 
 Universal data pump. It converts data of any format into data of another format.
+Easy-to-use package.
 Feel free to use it in your awesome project.
 
 Share some ❤️ and star repo to support the project.
@@ -427,7 +428,7 @@ Look at the output of first example or `output` file.
 
 ## Provided Pumps
 
-| 🔵 pipes ➡️  | Directory | Base64String | File | List\<int\> | String |
+| 🔵 pipes     | Directory | Base64String | File | List\<int\> | String |
 | ------------ | :-------: | :----------: | :--: | :---------: | :----: |
 | Base64String |           |              |      |             |   ✅   |
 | Directory    |           |              |      |             |   ✅   |
@@ -439,10 +440,10 @@ Look at the output of first example or `output` file.
 
 I separated some pupms because I created them for my own projects and I guess they won't be useful in general cases. But you can use them too.
 
-| 🔵 pipes ➡️ | DartConstListInt | DartConstTagsBytes |
-| ----------- | :--------------: | :----------------: |
-| Directory   |                  |         ✅         |
-| File        |        ✅        |                    |
+| 🔵 pipes  | DartConstListInt | DartConstTagsBytes |
+| --------- | :--------------: | :----------------: |
+| Directory |                  |         ✅         |
+| File      |        ✅        |                    |
 
 ## Welcome
 
