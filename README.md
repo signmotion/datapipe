@@ -13,7 +13,7 @@
 [![Pub Score](https://img.shields.io/pub/points/datapipe?logo=dart&logoColor=00b9fc)](https://pub.dev/packages/datapipe/score)
 
 Universal data pump. It converts data of any format into data of another format.
-Easy-to-use package.
+Easy-to-use package. Clearly stolen from functional programming.
 Feel free to use it in your awesome project.
 
 Share some ❤️ and star repo to support the project.
