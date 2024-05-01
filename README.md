@@ -1,26 +1,26 @@
 # Data Pipe
 
+![SDK version](https://badgen.net/pub/sdk-version/datapipe?style=for-the-badge)
+![Supported platforms](https://badgen.net/pub/flutter-platform/datapipe?style=for-the-badge)
+![Supported SDKs](https://badgen.net/pub/dart-platform/datapipe?style=for-the-badge)
+
 ![Cover - Data Pipe](https://raw.githubusercontent.com/signmotion/datapipe/master/images/cover.webp)
 
-[![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Pub Package](https://img.shields.io/pub/v/datapipe.svg?logo=dart&logoColor=00b9fc&color=blue)](https://pub.dartlang.org/packages/datapipe)
-[![Code Size](https://img.shields.io/github/languages/code-size/signmotion/datapipe?logo=github&logoColor=white)](https://github.com/signmotion/datapipe)
-[![Publisher](https://img.shields.io/pub/publisher/datapipe)](https://pub.dev/publishers/syrokomskyi.com)
+[![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![Pub Package](https://img.shields.io/pub/v/datapipe.svg?logo=dart&logoColor=00b9fc&color=blue&style=for-the-badge)](https://pub.dartlang.org/packages/datapipe)
+[![Code Size](https://img.shields.io/github/languages/code-size/signmotion/datapipe?logo=github&logoColor=white&style=for-the-badge)](https://github.com/signmotion/datapipe)
+[![Publisher](https://img.shields.io/pub/publisher/datapipe?style=for-the-badge)](https://pub.dev/publishers/syrokomskyi.com)
 
-![SDK version](https://badgen.net/pub/sdk-version/datapipe)
-![Supported platforms](https://badgen.net/pub/flutter-platform/datapipe)
-![Supported SDKs](https://badgen.net/pub/dart-platform/datapipe)
-
-[![Build Status](https://img.shields.io/github/actions/workflow/status/signmotion/datapipe/dart-ci.yml?logo=github-actions&logoColor=white)](https://github.com/signmotion/datapipe/actions)
-[![Pull Requests](https://img.shields.io/github/issues-pr/signmotion/datapipe?logo=github&logoColor=white)](https://github.com/signmotion/datapipe/pulls)
-[![Issues](https://img.shields.io/github/issues/signmotion/datapipe?logo=github&logoColor=white)](https://github.com/signmotion/datapipe/issues)
-[![Pub Score](https://img.shields.io/pub/points/datapipe?logo=dart&logoColor=00b9fc)](https://pub.dev/packages/datapipe/score)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/signmotion/datapipe/dart-ci.yml?logo=github-actions&logoColor=white&style=for-the-badge)](https://github.com/signmotion/datapipe/actions)
+[![Pull Requests](https://img.shields.io/github/issues-pr/signmotion/datapipe?logo=github&logoColor=white&style=for-the-badge)](https://github.com/signmotion/datapipe/pulls)
+[![Issues](https://img.shields.io/github/issues/signmotion/datapipe?logo=github&logoColor=white&style=for-the-badge)](https://github.com/signmotion/datapipe/issues)
+[![Pub Score](https://img.shields.io/pub/points/datapipe?logo=dart&logoColor=00b9fc&style=for-the-badge)](https://pub.dev/packages/datapipe/score)
 
 Universal data pump. It converts data of any format into data of another format.
 Easy-to-use package. Clearly stolen from functional programming.
 Feel free to use it in your awesome project.
 
-[![CodeFactor](https://codefactor.io/repository/github/signmotion/datapipe/badge)](https://codefactor.io/repository/github/signmotion/datapipe)
+[![CodeFactor](https://codefactor.io/repository/github/signmotion/datapipe/badge?style=for-the-badge)](https://codefactor.io/repository/github/signmotion/datapipe)
 
 Share some ❤️ and star repo to support the project.
 
